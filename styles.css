@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+} /*any changes here are made to the entire thing*/
+
+.full_out{
+    background: linear-gradient(90deg, #570606, #DAAF86);
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    /*isolation: isolate does the same thing*/
+}
+
+.inside{
+    width: 90%;
+    height: 90vh;    
+    position: relative;
+   }
+
+.inside::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("goldredsparkless.jpg"); 
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .7;
+    mix-blend-mode: multiply; /*to blend the forward bg img with the gradient*/
+}
+
+.navigate .logocgws{
+    background-image: url("cgwslogo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 150px;
+    opacity: .7;
+    mix-blend-mode: lighten;
+    position: relative;
+}
+
+.navigate::before{
+    content: "CGWS";
+    position: absolute;
+}
+/*font add*/
+
+
+.navigate{
+    width: 90%;
+    margin: auto;
+    height: 15vh;
+}
+
+.navigate , .lists{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lists li{ /*we use li inorder to get rid of the bulleted points in the list*/
+    list-style: none;
+    padding: 20px; /*to add spacing between the lists or else they will be stuck together*/
+}
+
+.lists a{ /*just to add changes to the text in the list*/
+    color: #E18975;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+} 
+
+.lists a::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #E18975;
+    transition: .3s ease-in-out;
+}
+
+.lists a:hover::before{
+    width: 100%;
+}
+
+.contentss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.contentss img{
+    width: 45vw;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    border-left: 4px sol  id #B08812;
+    padding: 20px 50px;
+}
+
+.info h3{
+    color: #cfc09f;
+    font-size: 2vw;
+    font-weight: 400;
+    transform: scale(1);
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: -1px 0 1px #c6bb9f, 
+    0 1px 1px #c6bb9f,
+    5px 5px 10px  rgba(0, 0, 0, 0.4),
+    -5px -5px 10px  rgba(0, 0, 0, 0.4);
+    letter-spacing: 4px;
+}
+
+.info h3::before{
+    content: attr(data-heading);
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(to bottom, 
+    #c6bb9f 22%, #5a0606 24%, #cfc09f 26%,
+    #c6bb9f 27%, #ffceb3 40%, #3a2c0f 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none; 
+} /*this is to give the h3 title a metallic look - it isnt working right now i will fix it later*/
+
+.info h1{
+    color: #bc5b5b;
+    font-size: 45px;
+}
+
+.info p{
+    color: whitesmoke;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.info button{
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    border-style: dotted;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.info button:hover{
+    background-color: goldenrod;
+    color: white;
+}
+
+/*have shop now display the price once clicked upon*/
+.thumbnail{
+    width: 3px;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    left: 25%;
+    bottom: 5px;
+    transform: translateX(-30%);
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    padding: 50px;
+    list-style: none;
+    mix-blend-mode: lighten;
+}
+
+.thumbnail img{
+    width: 80px;
+}
+
+.thumbnail li{
+    display: inline-block;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.thumbnail li:hover{
+    transform: translateY(-10px);
+    transition: .4s;
+}

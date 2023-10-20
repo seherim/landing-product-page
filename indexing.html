@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Landing Page</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div class="full_out">
+        <div class="inside">
+            <div class="navigate"> <!--within this navigate we include further classes that show what the navigate bar must contain-->
+                <div class="logocgws"></div>
+                <ul class="lists">
+                    <li><a href="#"> Home </a></li>
+                    <li><a href="#"> Products </a></li>
+                    <li><a href="#"> Orders </a></li>
+                    <li><a href="#"> Inquiry </a></li>
+                </ul> <!--this allows for bulleted/unordered list-->
+            </div>
+            <!--we go out of our navigation bar and now create content in the body-->
+            <div class="contentss">
+                <img src="img/ironmask.png" class="contentssimg">
+                <div class="info">
+                    <h3>iron-man</h3>
+                    <h1>Helmet Mask</h1>
+                    <p>
+                        Making your childhood dreams come <i>true</i>! 
+                        The fully responsive and functional Iron-Man mask is integrated with AI technology that responds to commands and allows you to manually control your devices via bluetooth. 
+                        The helmet is durable, with intricate artwork surrounding its exterior. 
+                        Get your hands on one now before they are sold out!
+                    </p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+             <!--for the thumbnail of the image-->
+             <ul class="thumbnail">
+                <li><img src="img/ironmask.png" onclick="imagee('img/ironmask.png')"></li>
+                <li><img src="img/openmask.png" onclick="imagee('img/openmask.png')"></li>
+                <li><img src="img/maskbox.png" onclick="imagee('img/maskbox.png')"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function imagee(anything){
+            document.querySelector('.contentssimg').src = anything;
+        }
+    </script>
+</body>
+</html>
