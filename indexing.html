@@ -11,16 +11,21 @@
         <div class="inside">
             <div class="navigate"> <!--within this navigate we include further classes that show what the navigate bar must contain-->
                 <div class="logocgws"></div>
-                <ul class="lists">
+                <ul class="lists" id="lists">
                     <li><a href="#"> Home </a></li>
                     <li><a href="#"> Products </a></li>
                     <li><a href="#"> Orders </a></li>
                     <li><a href="#"> Inquiry </a></li>
                 </ul> <!--this allows for bulleted/unordered list-->
+                <div class="hambys" id ="hambys"> <!--to make it dynamic-->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
             <!--we go out of our navigation bar and now create content in the body-->
             <div class="contentss">
-                <img src="img/ironmask.png" class="contentssimg">
+                <img loading="lazy" alt="" src="img/ironmask.png" class="contentssimg">
                 <div class="info">
                     <h3>iron-man</h3>
                     <h1>Helmet Mask</h1>
@@ -30,14 +35,23 @@
                         The helmet is durable, with intricate artwork surrounding its exterior. 
                         Get your hands on one now before they are sold out!
                     </p>
-                    <button>Shop Now</button>
+                    <button class="buttons" onclick="popupopen()">
+                        Shop Now
+                    </button>
+                    <div class = "popup" id="popup">
+                        <img loading="lazy" alt="" src = "img/ironlogo.png">
+                       <h2>PRICE: $230</h2> 
+                       <p>CUSTOMISATIONS: extra $40</p>
+                       <h4>1.5 year warranty</h4>
+                       <button class="butter" onclick="popupclose()">OK</button>
+                    </div>
                 </div>
             </div>
-             <!--for the thumbnail of the image-->
+             <!--for the thumbnail of the image with image optimization there are no links for image optimization as these are all edited by basic photoshop-->
              <ul class="thumbnail">
-                <li><img src="img/ironmask.png" onclick="imagee('img/ironmask.png')"></li>
-                <li><img src="img/openmask.png" onclick="imagee('img/openmask.png')"></li>
-                <li><img src="img/maskbox.png" onclick="imagee('img/maskbox.png')"></li>
+                <li><img loading="lazy" alt="" src="img/ironmask.png" onclick="imagee('img/ironmask.png')"></li>
+                <li><img loading="lazy" alt="" src="img/openmask.png" onclick="imagee('img/openmask.png')"></li>
+                <li><img loading="lazy" alt="" src="img/maskbox.png" onclick="imagee('img/maskbox.png')"></li>
             </ul>
         </div>
     </div>
@@ -45,6 +59,19 @@
     <script type="text/javascript">
         function imagee(anything){
             document.querySelector('.contentssimg').src = anything;
+        }
+    </script>
+
+    <script src="./lists.js"></script>
+
+    <script>
+        let popup = document.getElementById("popup");
+        function popupopen(){
+            popup.classList.add("openpopupp");
+        }
+
+        function popupclose(){
+            popup.classList.remove("openpopupp");
         }
     </script>
 </body>
