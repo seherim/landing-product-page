@@ -15,8 +15,24 @@
                     <li><a href="#"> Home </a></li>
                     <li><a href="#"> Products </a></li>
                     <li><a href="#"> Orders </a></li>
-                    <li><a href="#"> Inquiry </a></li>
+                    <li onclick="formopen()"><a href="#"> Inquiry </a></li>
                 </ul> <!--this allows for bulleted/unordered list-->
+                <!--for creating and validating the form-->
+                <div class="formy" id="formy">
+                    <h2>Subscribe and Inquire</h2>
+                    <form name="formy" onsubmit="return formclose()" method="post">
+                        <div id="emsg" style="color: rgb(227, 90, 90);"></div>
+                        
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="name"><br><br>
+            
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="email" required><br><br>
+            
+                        <input type="text" value="add your inquiry here">
+                        <button type="button" onclick="formv()">Done!</button>
+                    </form>
+                </div>
                 <div class="hambys" id ="hambys"> <!--to make it dynamic-->
                     <span></span>
                     <span></span>
@@ -27,11 +43,11 @@
             <div class="contentss">
                 <img loading="lazy" alt="" src="img/ironmask.png" class="contentssimg">
                 <div class="info">
-                    <h3>iron-man</h3>
+                    <h3>Iron-Man</h3>
                     <h1>Helmet Mask</h1>
                     <p>
                         Making your childhood dreams come <i>true</i>! 
-                        The fully responsive and functional Iron-Man mask is integrated with AI technology that responds to commands and allows you to manually control your devices via bluetooth. 
+                        The fully responsive and functional Iron-Man Mark 5 helmet is integrated with AI technology that responds to commands and allows you to manually control your devices via bluetooth. 
                         The helmet is durable, with intricate artwork surrounding its exterior. 
                         Get your hands on one now before they are sold out!
                     </p>
@@ -74,5 +90,33 @@
             popup.classList.remove("openpopupp");
         }
     </script>
+
+    <script>
+    function formopen() {
+        document.getElementById("formy").style.display = "block";
+    }
+
+    function formclose() {
+        document.getElementById("formy").style.display = "none";
+    }
+
+    function formv() {
+        var name = document.forms["formy"]["name"].value;
+        var email = document.forms["formy"]["email"].value;
+        var emsg = document.getElementById("emsg");
+        var smsg = document.getElementById("smsg");
+        if (email === "") {
+            emsg.innerText = "Error. Cannot proceed without email.";
+            smgs.innerText = "";
+            return false;
+        }
+
+        else {
+        emsg.innerText = "";
+        formclose();}
+
+    }
+    </script>
+
 </body>
 </html>

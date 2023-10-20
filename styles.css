@@ -40,19 +40,14 @@
     background-image: url("cgwslogo.png");
     background-repeat: no-repeat;
     background-size: contain;
-    width: 150px;
-    height: 150px;
-    opacity: .7;
-    mix-blend-mode: lighten;
+    margin-left: -10%;
+    margin-top: 5%;
+    width: 250px;
+    height: 250px;
+    opacity: .25;
+    mix-blend-mode: multiply;
     position: relative;
 }
-
-.navigate::before{
-    content: "CGWS";
-    position: absolute;
-}
-/*font add*/
-
 
 .navigate{
     width: 90%;
@@ -115,7 +110,7 @@
 }
 
 .info h3{
-    color: #cfc09f;
+    color: #cfc09f; 
     font-size: 2vw;
     font-weight: 400;
     transform: scale(1);
@@ -123,17 +118,17 @@
     position: relative;
     text-shadow: -1px 0 1px #c6bb9f, 
     0 1px 1px #c6bb9f,
-    5px 5px 10px  rgba(0, 0, 0, 0.4),
+    5px 5px 10px  rgba(0, 0, 0, 0.148),
     -5px -5px 10px  rgba(0, 0, 0, 0.4);
     letter-spacing: 4px;
 }
 
 .info h3::before{
-    content: attr(data-heading);
+    content: "IRON-MAN";
     left: 0;
     top: 0;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     background: linear-gradient(to bottom, 
     #c6bb9f 22%, #5a0606 24%, #cfc09f 26%,
     #c6bb9f 27%, #ffceb3 40%, #3a2c0f 78%);
@@ -141,7 +136,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none; 
-} /*this is to give the h3 title a metallic look - it isnt working right now i will fix it later*/
+} /*this is to give the h3 title a metallic look */
 
 .info h1{
     color: #bc5b5b;
@@ -264,6 +259,56 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+/*forms */
+.formy {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 1px solid #aaaaaa;
+    background-color: #563636;
+    padding: 20px;
+    max-width: 300px;
+}
+
+
+.formy label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.formy input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #7c6060;
+    border-radius: 5px;
+}
+
+.formy button {
+    background-color: #aaaaaa;
+    color: rgb(255, 167, 167);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.formy button[type="button"] {
+    background-color: #6e0800;
+}
+
+
+
+
+
+
+
+
+
 
 
 
